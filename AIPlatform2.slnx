@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="AIPlatform2.Shared/AIPlatform2.Shared.csproj" />
+  <Project Path="AIPlatform2/AIPlatform2.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+</Solution>

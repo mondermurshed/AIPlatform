@@ -1,0 +1,171 @@
+﻿@page "/imagepage"
+@inject AIPlatform.Shared.Services.InferenceService Inference
+
+<h3>Text → Image (simple)</h3>
+
+<div style="max-width:720px;">
+    <div style="margin-bottom:8px;">
+        <FluentTextField @bind-Value="Prompt" Placeholder="Type a prompt..." aria-label="Prompt" />
+    </div>
+    @if (string.IsNullOrWhiteSpace(Prompt))
+    {
+        IsBusy = true;
+    }
+    else
+    {
+        IsBusy = false;
+    }
+    <div style="display:flex; gap:8px; margin-bottom:12px;">
+        <FluentButton OnClick="GenerateImage" Disabled="@IsBusy">Generate</FluentButton>
+        <FluentButton OnClick="OpenOutputFolder" Disabled="@IsBusy">Open Output Folder</FluentButton>
+    </div>
+
+    @if (IsBusy)
+    {
+        <div style="margin-bottom:12px">Generating... please wait.</div>
+    }
+
+    @if (!string.IsNullOrEmpty(ErrorMessage))
+    {
+        <div style="margin:8px 0; color:#b00020; background:#fff1f2; padding:8px; border-radius:6px;">
+            <strong>Error:</strong> @ErrorMessage
+        </div>
+    }
+
+    @if (!string.IsNullOrEmpty(SavedPath))
+    {
+        <div style="margin-top:12px;">
+            <div><strong>Saved:</strong> <a href="@SavedPath" target="_blank" rel="noopener">@SavedPath</a></div>
+            @if (!string.IsNullOrEmpty(PreviewDataUrl))
+            {
+                <img src="@PreviewDataUrl" alt="preview" style="max-width:100%; margin-top:8px; border:1px solid #ccc;" />
+            }
+            <div style="margin-top:8px;">
+                <FluentButton OnClick="@(() => OpenFile(SavedPath))">Open Image</FluentButton>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    string Prompt { get; set; } = "a fantasy castle at sunset";
+    bool IsBusy { get; set; } = false;
+    string SavedPath { get; set; }
+    string LastSavedFolder { get; set; }
+    string PreviewDataUrl { get; set; }
+    string ErrorMessage { get; set; }
+
+    async Task GenerateImage()
+    {
+        // guard
+        if (IsBusy) return;
+        if (string.IsNullOrWhiteSpace(Prompt))
+        {
+            ErrorMessage = "Please enter a prompt.";
+            return;
+        }
+
+        try
+        {
+            IsBusy = true;
+            ErrorMessage = null;
+            SavedPath = null;
+            PreviewDataUrl = null;
+            StateHasChanged();
+
+            // call the service
+            var path = await Inference.GenerateImageFromPromptAsync(Prompt);
+
+            if (string.IsNullOrEmpty(path) || !System.IO.File.Exists(path))
+            {
+                ErrorMessage = $"Generation failed or file not found: {path}";
+                return;
+            }
+
+            SavedPath = path;
+            LastSavedFolder = System.IO.Path.GetDirectoryName(path);
+
+            // preview
+            var bytes = await System.IO.File.ReadAllBytesAsync(path);
+            PreviewDataUrl = $"data:image/png;base64,{Convert.ToBase64String(bytes)}";
+        }
+        catch (Exception ex)
+        {
+            // show a short message and log the full exception to console for debugging
+            ErrorMessage = ex.Message;
+            Console.Error.WriteLine(ex.ToString());
+        }
+        finally
+        {
+            IsBusy = false;
+            StateHasChanged();
+        }
+    }
+
+    void OpenOutputFolder()
+    {
+        if (string.IsNullOrEmpty(LastSavedFolder)) return;
+
+        try
+        {
+            // cross-platform open folder
+            if (IsWindows())
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                {
+                    FileName = LastSavedFolder,
+                    UseShellExecute = true
+                });
+            }
+            else if (IsMacOS())
+            {
+                System.Diagnostics.Process.Start("open", LastSavedFolder);
+            }
+            else
+            {
+                // linux: try xdg-open
+                System.Diagnostics.Process.Start("xdg-open", LastSavedFolder);
+            }
+        }
+        catch (Exception ex)
+        {
+            // not critical; show message
+            ErrorMessage = $"Failed to open folder: {ex.Message}";
+        }
+    }
+
+    void OpenFile(string fullPath)
+    {
+        if (string.IsNullOrEmpty(fullPath) || !System.IO.File.Exists(fullPath)) return;
+
+        try
+        {
+            if (IsWindows())
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                {
+                    FileName = fullPath,
+                    UseShellExecute = true
+                });
+            }
+            else if (IsMacOS())
+            {
+                System.Diagnostics.Process.Start("open", fullPath);
+            }
+            else
+            {
+                System.Diagnostics.Process.Start("xdg-open", fullPath);
+            }
+        }
+        catch (Exception ex)
+        {
+            ErrorMessage = $"Failed to open image: {ex.Message}";
+        }
+    }
+
+    static bool IsWindows()
+        => System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.Windows);
+
+    static bool IsMacOS()
+        => System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.OSX);
+}
