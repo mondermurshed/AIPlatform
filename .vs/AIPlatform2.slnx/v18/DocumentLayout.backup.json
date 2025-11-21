@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\monde\\source\\repos\\AIPlatform2\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|c:\\users\\monde\\source\\repos\\aiplatform2\\aiplatform2.shared\\aiplatform2.shared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|solutionrelative:aiplatform2.shared\\aiplatform2.shared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|c:\\users\\monde\\source\\repos\\aiplatform2\\aiplatform2.shared\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|solutionrelative:aiplatform2.shared\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -23,6 +27,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AIPlatform2.Shared",
+              "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform2\\AIPlatform2.Shared\\AIPlatform2.Shared.csproj",
+              "RelativeDocumentMoniker": "AIPlatform2.Shared\\AIPlatform2.Shared.csproj",
+              "ToolTip": "C:\\Users\\monde\\source\\repos\\AIPlatform2\\AIPlatform2.Shared\\AIPlatform2.Shared.csproj",
+              "RelativeToolTip": "AIPlatform2.Shared\\AIPlatform2.Shared.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-21T14:25:50.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "NavMenu.razor",
               "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform2\\AIPlatform2.Shared\\Layout\\NavMenu.razor",
               "RelativeDocumentMoniker": "AIPlatform2.Shared\\Layout\\NavMenu.razor",
@@ -35,7 +52,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "MauiProgram.cs",
               "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform2\\AIPlatform2\\MauiProgram.cs",
               "RelativeDocumentMoniker": "AIPlatform2\\MauiProgram.cs",

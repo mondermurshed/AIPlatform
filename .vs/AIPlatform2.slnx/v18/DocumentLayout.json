@@ -27,12 +27,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AIPlatform2.Shared",
+              "Title": "AIPlatform2.Shared.csproj",
               "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform2\\AIPlatform2.Shared\\AIPlatform2.Shared.csproj",
               "RelativeDocumentMoniker": "AIPlatform2.Shared\\AIPlatform2.Shared.csproj",
               "ToolTip": "C:\\Users\\monde\\source\\repos\\AIPlatform2\\AIPlatform2.Shared\\AIPlatform2.Shared.csproj",
               "RelativeToolTip": "AIPlatform2.Shared\\AIPlatform2.Shared.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-11-21T14:25:50.045Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "AIPlatform2.Shared\\Layout\\NavMenu.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-20T18:26:22.846Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-20T18:26:22.846Z"
             },
             {
               "$type": "Document",
