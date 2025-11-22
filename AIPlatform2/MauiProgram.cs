@@ -24,6 +24,7 @@ namespace AIPlatform2
             builder.Services.AddMauiBlazorWebView();
             builder.Services.AddFluentUIComponents();
             builder.Services.AddSingleton<InferenceService>();
+            builder.Services.AddSingleton<SettingsService>();
 #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();
             builder.Logging.AddDebug();

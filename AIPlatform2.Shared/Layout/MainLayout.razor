@@ -1,7 +1,11 @@
 ﻿@inherits LayoutComponentBase
+
 <FluentLayout>
     <FluentHeader>
         AIPlatform2
+        <FluentSpacer />
+        <FluentButton Appearance="Appearance.Accent" IconEnd="@(new Icons.Regular.Size20.Settings())" Title="Settings" OnClick="@onclickingsettings">Settings</FluentButton>
+                 
     </FluentHeader>
     <FluentStack Class="main" Orientation="Orientation.Horizontal" Width="100%">
         <NavMenu />
@@ -18,3 +22,45 @@
     <a href="." class="reload">Reload</a>
     <span class="dismiss">🗙</span>
 </div>
+
+<FluentToastProvider />
+<FluentDialogProvider />
+<FluentTooltipProvider />
+<FluentMessageBarProvider />
+<FluentMenuProvider />
+
+
+
+
+
+
+
+@code
+{
+    private IDialogReference? _dialog;
+    private readonly SimplePerson simplePerson = new()
+    {
+        Firstname = "Steve",
+        Lastname = "Roth",
+        Age = 42,
+    };
+
+    [Inject]
+    private IDialogService DialogService { get; set; }
+
+    private async Task onclickingsettings()
+    {
+        await ShowSimplePanelAsync(simplePerson);
+    }
+
+    private async Task ShowSimplePanelAsync(SimplePerson simplePerson)
+    {
+        var dialogParameters = new DialogParameters<SimplePerson>();
+        // Add any required parameters to dialogParameters here
+
+        _dialog = await DialogService.ShowPanelAsync<>(simplePerson, dialogParameters);
+    }
+
+   
+
+}

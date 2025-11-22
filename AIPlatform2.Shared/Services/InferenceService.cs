@@ -17,7 +17,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace AIPlatform.Shared.Services
+namespace AIPlatform2.Shared.Services
 {
     public class InferenceService : IDisposable
     {
