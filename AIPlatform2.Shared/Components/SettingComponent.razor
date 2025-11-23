@@ -1,15 +1,42 @@
-﻿@implements IDialogContentComponent<SimplePerson>
-
+﻿@* @implements IDialogContentComponent<SimplePerson>
+<FluentDesignTheme @bind-Mode="@Mode"
+                   @bind-OfficeColor="@OfficeColor"
+                   StorageName="theme" />
 <FluentDialogBody>
-    <h3>Hello @Content.Firstname </h3>
-    <p>Your lastname is @Content.Lastname and you are @Content.Age years young </p>
 
-    <FluentTextField @bind-Value="@Content.Firstname">Your firstname:</FluentTextField>
-    <FluentTextField @bind-Value="@Content.Lastname">Your lastname:</FluentTextField>
-    <FluentNumberField @bind-Value="@Content.Age">Your age:</FluentNumberField>
+
+    <h3>Quick Settings</h3>
+
+
+
+    <FluentSelect Label="Theme"
+                  Width="250px"
+                  Items="@(Enum.GetValues<DesignThemeModes>())"
+                  @bind-SelectedOption="@Mode" />
+
+
+    <FluentSelect Label="Color"
+                  Items="@(Enum.GetValues<OfficeColor>().Select(i => (OfficeColor?)i))"
+                  Height="200px"
+                  Width="250px"
+                  @bind-SelectedOption="@OfficeColor"/>
+
+
+    <FluentButton Appearance="Appearance.Accent" OnClick="PickRandomColor">Feeling lucky?</FluentButton>
+
+
 </FluentDialogBody>
 
 @code {
     [Parameter]
     public SimplePerson Content { get; set; } = default!;
-}
+
+    public DesignThemeModes Mode { get; set; }
+    public OfficeColor? OfficeColor { get; set; }
+
+
+    void PickRandomColor()
+    {
+        OfficeColor = OfficeColorUtilities.GetRandom();
+    }
+} *@

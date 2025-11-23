@@ -1,4 +1,4 @@
-using AIPlatform.Shared.Services;
+using AIPlatform2.Shared.Services;
 using AIPlatform2.Services;
 using AIPlatform2.Shared.Services;
 using Microsoft.Extensions.Logging;

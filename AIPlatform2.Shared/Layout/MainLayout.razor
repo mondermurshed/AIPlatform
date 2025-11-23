@@ -1,15 +1,24 @@
 ﻿@inherits LayoutComponentBase
 
+                
+                  
+<script src="_content/Microsoft.FluentUI.AspNetCore.Components/js/loading-theme.js" type="text/javascript"></script>
+<loading-theme storage-name="theme"></loading-theme>
+
+
 <FluentLayout>
+
     <FluentHeader>
         AIPlatform2
         <FluentSpacer />
+     
         <FluentButton Appearance="Appearance.Accent" IconEnd="@(new Icons.Regular.Size20.Settings())" Title="Settings" OnClick="@onclickingsettings">Settings</FluentButton>
-                 
+
     </FluentHeader>
     <FluentStack Class="main" Orientation="Orientation.Horizontal" Width="100%">
         <NavMenu />
         <FluentBodyContent Class="body-content">
+
             <div class="content">
                 @Body
             </div>
@@ -33,10 +42,13 @@
 
 
 
-
-
+                  
 @code
 {
+    
+
+
+
     private IDialogReference? _dialog;
     private readonly SimplePerson simplePerson = new()
     {
@@ -58,9 +70,9 @@
         var dialogParameters = new DialogParameters<SimplePerson>();
         // Add any required parameters to dialogParameters here
 
-        _dialog = await DialogService.ShowPanelAsync<>(simplePerson, dialogParameters);
+        // _dialog = await DialogService.ShowPanelAsync<SettingComponent>(simplePerson, dialogParameters);
     }
-
+    
    
 
 }
