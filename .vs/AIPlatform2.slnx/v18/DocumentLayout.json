@@ -1,13 +1,44 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\monde\\source\\repos\\AIPlatform2\\",
+  "WorkspaceRootPath": "C:\\Users\\monde\\source\\repos\\AIPlatform\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{32DAE409-558D-CC05-A4F5-06C6E5B75F74}|AIPlatform2\\AIPlatform2.csproj|c:\\users\\monde\\source\\repos\\aiplatform2\\aiplatform2\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|c:\\users\\monde\\source\\repos\\aiplatform\\aiplatform2.shared\\components\\pathinput.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|solutionrelative:aiplatform2.shared\\components\\pathinput.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|c:\\users\\monde\\source\\repos\\aiplatform\\aiplatform2.shared\\components\\pathinput.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|solutionrelative:aiplatform2.shared\\components\\pathinput.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|c:\\users\\monde\\source\\repos\\aiplatform\\aiplatform2.shared\\components\\pathinput.platform.desktop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|solutionrelative:aiplatform2.shared\\components\\pathinput.platform.desktop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|c:\\users\\monde\\source\\repos\\aiplatform\\aiplatform2.shared\\components\\pathinput.platform.fallback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|solutionrelative:aiplatform2.shared\\components\\pathinput.platform.fallback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|c:\\users\\monde\\source\\repos\\aiplatform\\aiplatform2.shared\\components\\settingcomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|solutionrelative:aiplatform2.shared\\components\\settingcomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\10.0.100\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.References.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|c:\\users\\monde\\source\\repos\\aiplatform\\aiplatform2.shared\\services\\settingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|solutionrelative:aiplatform2.shared\\services\\settingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|c:\\users\\monde\\source\\repos\\aiplatform\\aiplatform2.shared\\services\\pathpickerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|solutionrelative:aiplatform2.shared\\services\\pathpickerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32DAE409-558D-CC05-A4F5-06C6E5B75F74}|AIPlatform2\\AIPlatform2.csproj|c:\\users\\monde\\source\\repos\\aiplatform\\aiplatform2\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{32DAE409-558D-CC05-A4F5-06C6E5B75F74}|AIPlatform2\\AIPlatform2.csproj|solutionrelative:aiplatform2\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{32DAE409-558D-CC05-A4F5-06C6E5B75F74}|AIPlatform2\\AIPlatform2.csproj|c:\\users\\monde\\source\\repos\\aiplatform2\\aiplatform2\\aiplatform2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{32DAE409-558D-CC05-A4F5-06C6E5B75F74}|AIPlatform2\\AIPlatform2.csproj|c:\\users\\monde\\source\\repos\\aiplatform\\aiplatform2\\aiplatform2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{32DAE409-558D-CC05-A4F5-06C6E5B75F74}|AIPlatform2\\AIPlatform2.csproj|solutionrelative:aiplatform2\\aiplatform2.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
@@ -24,24 +55,128 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PathInput.Platform.Fallback.cs",
+              "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Components\\PathInput.Platform.Fallback.cs",
+              "RelativeDocumentMoniker": "AIPlatform2.Shared\\Components\\PathInput.Platform.Fallback.cs",
+              "ToolTip": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Components\\PathInput.Platform.Fallback.cs",
+              "RelativeToolTip": "AIPlatform2.Shared\\Components\\PathInput.Platform.Fallback.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T19:42:23.498Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Microsoft.NET.Sdk.StaticWebAssets.References.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\10.0.100\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.References.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\10.0.100\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.References.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\10.0.100\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.References.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\10.0.100\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.References.targets",
+              "ViewState": "AgIAAHIAAAAAAAAAAAApwIIAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-11-24T19:29:00.224Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PathInput.Platform.Desktop.cs",
+              "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Components\\PathInput.Platform.Desktop.cs",
+              "RelativeDocumentMoniker": "AIPlatform2.Shared\\Components\\PathInput.Platform.Desktop.cs",
+              "ToolTip": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Components\\PathInput.Platform.Desktop.cs",
+              "RelativeToolTip": "AIPlatform2.Shared\\Components\\PathInput.Platform.Desktop.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T19:27:56.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "PathInput.razor.cs",
+              "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Components\\PathInput.razor.cs",
+              "RelativeDocumentMoniker": "AIPlatform2.Shared\\Components\\PathInput.razor.cs",
+              "ToolTip": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Components\\PathInput.razor.cs",
+              "RelativeToolTip": "AIPlatform2.Shared\\Components\\PathInput.razor.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T19:18:27.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SettingComponent.razor",
+              "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Components\\SettingComponent.razor",
+              "RelativeDocumentMoniker": "AIPlatform2.Shared\\Components\\SettingComponent.razor",
+              "ToolTip": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Components\\SettingComponent.razor",
+              "RelativeToolTip": "AIPlatform2.Shared\\Components\\SettingComponent.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-24T19:11:51.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PathInput.razor",
+              "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Components\\PathInput.razor",
+              "RelativeDocumentMoniker": "AIPlatform2.Shared\\Components\\PathInput.razor",
+              "ToolTip": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Components\\PathInput.razor",
+              "RelativeToolTip": "AIPlatform2.Shared\\Components\\PathInput.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-24T19:09:54.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SettingsService.cs",
+              "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Services\\SettingsService.cs",
+              "RelativeDocumentMoniker": "AIPlatform2.Shared\\Services\\SettingsService.cs",
+              "ToolTip": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Services\\SettingsService.cs",
+              "RelativeToolTip": "AIPlatform2.Shared\\Services\\SettingsService.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAAAE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T19:01:59.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PathPickerBase.cs",
+              "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Services\\PathPickerBase.cs",
+              "RelativeDocumentMoniker": "AIPlatform2.Shared\\Services\\PathPickerBase.cs",
+              "ToolTip": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Services\\PathPickerBase.cs",
+              "RelativeToolTip": "AIPlatform2.Shared\\Services\\PathPickerBase.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAYwCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T18:32:09.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "MauiProgram.cs",
-              "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform2\\AIPlatform2\\MauiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2\\MauiProgram.cs",
               "RelativeDocumentMoniker": "AIPlatform2\\MauiProgram.cs",
-              "ToolTip": "C:\\Users\\monde\\source\\repos\\AIPlatform2\\AIPlatform2\\MauiProgram.cs",
+              "ToolTip": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2\\MauiProgram.cs",
               "RelativeToolTip": "AIPlatform2\\MauiProgram.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwCUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-24T18:24:47.064Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "BundledVersions.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\packs\\Microsoft.Maui.Sdk\\9.0.111\\Sdk\\BundledVersions.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\packs\\Microsoft.Maui.Sdk\\9.0.111\\Sdk\\BundledVersions.targets",
@@ -54,7 +189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "ReadMe.txt",
               "DocumentMoniker": "C:\\Users\\monde\\.nuget\\packages\\communitytoolkit.maui\\12.2.0\\ReadMe.txt",
               "RelativeDocumentMoniker": "..\\..\\..\\.nuget\\packages\\communitytoolkit.maui\\12.2.0\\ReadMe.txt",
@@ -67,11 +202,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AIPlatform2",
-              "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform2\\AIPlatform2\\AIPlatform2.csproj",
+              "DocumentIndex": 9,
+              "Title": "AIPlatform2.csproj",
+              "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2\\AIPlatform2.csproj",
               "RelativeDocumentMoniker": "AIPlatform2\\AIPlatform2.csproj",
-              "ToolTip": "C:\\Users\\monde\\source\\repos\\AIPlatform2\\AIPlatform2\\AIPlatform2.csproj",
+              "ToolTip": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2\\AIPlatform2.csproj",
               "RelativeToolTip": "AIPlatform2\\AIPlatform2.csproj",
               "ViewState": "AgIAADMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",

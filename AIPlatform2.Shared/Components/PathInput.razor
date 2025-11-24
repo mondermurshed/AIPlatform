@@ -1,0 +1,12 @@
+﻿@using AIPlatform2.Shared.Components
+@inherits PathInputBase
+
+<div style="display:flex;gap:8px;align-items:center;max-width:900px;">
+    <input readonly value="@Path" placeholder="Choose main models folder..." style="flex:1;padding:8px;" />
+    <button @onclick="OpenFolderDialog">Browse…</button>
+    <button @onclick="ClearPath" title="Clear">✖</button>
+    @if (!string.IsNullOrEmpty(ValidationError))
+    {
+        <span style="color:#c00;margin-left:8px;">@ValidationError</span>
+    }
+</div>
