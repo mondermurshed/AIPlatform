@@ -17,6 +17,9 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
+
+
+
 namespace AIPlatform2.Shared.Services
 {
     public class InferenceService : IDisposable
@@ -77,10 +80,10 @@ namespace AIPlatform2.Shared.Services
             using (var image = new Image<Rgba32>(W, H))
             {
                 // Fill background
-                image.Mutate(ctx => ctx.Fill(Color.DarkSlateBlue));
+                image.Mutate(ctx => ctx.Fill(SixLabors.ImageSharp.Color.DarkSlateBlue));
 
                 // Choose a font. This block tries to pick a common font, with fallbacks.
-                Font font;
+                SixLabors.Fonts.Font font;
                 try
                 {
                     font = SystemFonts.CreateFont("Arial", 18, FontStyle.Bold);
@@ -109,14 +112,14 @@ namespace AIPlatform2.Shared.Services
                 image.Mutate(ctx =>
                 {
                     // semi-transparent box behind text
-                    ctx.Fill(Color.Black.WithAlpha(0.55f), new RectangleF(12, rectY, W - 24, rectHeight));
+                    ctx.Fill(SixLabors.ImageSharp.Color.Black.WithAlpha(0.55f), new RectangleF(12, rectY, W - 24, rectHeight));
 
                     // draw each line
                     float lineX = 24;
                     float lineY = rectY + padding;
                     foreach (var line in lines)
                     {
-                        ctx.DrawText(line, font, Color.White, new PointF(lineX, lineY));
+                        ctx.DrawText(line, font, SixLabors.ImageSharp.Color.White, new SixLabors.ImageSharp.PointF(lineX, lineY));
                         lineY += lineHeight;
                     }
                 });

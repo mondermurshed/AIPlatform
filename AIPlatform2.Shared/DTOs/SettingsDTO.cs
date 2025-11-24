@@ -6,7 +6,7 @@ namespace DTOs
 {
     public class SettingsDTO
     {
-        
+        public string? MainModelPath { get; set; }
 
     }
 }

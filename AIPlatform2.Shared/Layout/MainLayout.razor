@@ -1,4 +1,5 @@
-﻿@inherits LayoutComponentBase
+﻿@using global::DTOs
+@inherits LayoutComponentBase
 
                 
                   
@@ -33,7 +34,7 @@
 </div>
 
 <FluentToastProvider />
-<FluentDialogProvider />
+<FluentDialogProvider  />
 <FluentTooltipProvider />
 <FluentMessageBarProvider />
 <FluentMenuProvider />
@@ -45,16 +46,14 @@
                   
 @code
 {
-    
+
 
 
 
     private IDialogReference? _dialog;
-    private readonly SimplePerson simplePerson = new()
+    private readonly SettingsDTO Settings = new()
     {
-        Firstname = "Steve",
-        Lastname = "Roth",
-        Age = 42,
+        
     };
 
     [Inject]
@@ -62,15 +61,31 @@
 
     private async Task onclickingsettings()
     {
-        await ShowSimplePanelAsync(simplePerson);
+        await ShowSimplePanelAsync(Settings);
     }
 
-    private async Task ShowSimplePanelAsync(SimplePerson simplePerson)
+    private async Task ShowSimplePanelAsync(SettingsDTO Settings)
     {
-        var dialogParameters = new DialogParameters<SimplePerson>();
+        DialogParameters<SettingsDTO> parameters = new()
+        {
+            Content = Settings,
+            Title = $"Quick Settings",
+            Alignment = HorizontalAlignment.Right,
+            Modal = true,
+            ShowDismiss = false,
+            PrimaryAction = "Maybe",
+            SecondaryAction = "Cancel",
+            Width = "500px",
+            
+        };
         // Add any required parameters to dialogParameters here
 
-        // _dialog = await DialogService.ShowPanelAsync<SettingComponent>(simplePerson, dialogParameters);
+        _dialog = await DialogService.ShowPanelAsync<SettingComponent>(Settings, parameters);
+        var result = await _dialog.Result;
+        if (!result.Cancelled)
+        {
+          
+        }
     }
     
    

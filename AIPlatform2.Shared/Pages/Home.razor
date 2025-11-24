@@ -9,13 +9,9 @@
 Welcome to your new Fluent app running on <em>@factor</em> using <em>@platform</em>.
 
 
-<FluentDesignTheme @bind-Mode="@Mode" />
-<FluentSelect Label="Theme"
-              Width="250px"
-              Items="@(Enum.GetValues<DesignThemeModes>())"
-              @bind-SelectedOption="@Mode" />
+
 @code {
-    public DesignThemeModes Mode { get; set; }
+
     private string factor => FormFactor.GetFormFactor();
     private string platform => FormFactor.GetPlatform();
 }

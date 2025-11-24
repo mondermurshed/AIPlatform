@@ -1,35 +1,37 @@
-﻿@* @implements IDialogContentComponent<SimplePerson>
+﻿@using DTOs
+@implements IDialogContentComponent<SettingsDTO>
 <FluentDesignTheme @bind-Mode="@Mode"
                    @bind-OfficeColor="@OfficeColor"
                    StorageName="theme" />
 <FluentDialogBody>
 
 
-    <h3>Quick Settings</h3>
+  
 
 
 
-    <FluentSelect Label="Theme"
+    <FluentSelect style="margin-bottom:10px;" Label="Theme"
                   Width="250px"
                   Items="@(Enum.GetValues<DesignThemeModes>())"
                   @bind-SelectedOption="@Mode" />
 
 
-    <FluentSelect Label="Color"
+    <FluentSelect style="margin-bottom:15px;" Label="Color"
                   Items="@(Enum.GetValues<OfficeColor>().Select(i => (OfficeColor?)i))"
                   Height="200px"
                   Width="250px"
                   @bind-SelectedOption="@OfficeColor"/>
 
 
-    <FluentButton Appearance="Appearance.Accent" OnClick="PickRandomColor">Feeling lucky?</FluentButton>
+    <FluentButton style="margin-bottom:15px;" Appearance="Appearance.Accent" OnClick="PickRandomColor">Feeling lucky?</FluentButton>
+ 
 
 
 </FluentDialogBody>
 
 @code {
     [Parameter]
-    public SimplePerson Content { get; set; } = default!;
+    public SettingsDTO Content { get; set; } = default!;
 
     public DesignThemeModes Mode { get; set; }
     public OfficeColor? OfficeColor { get; set; }
@@ -38,5 +40,6 @@
     void PickRandomColor()
     {
         OfficeColor = OfficeColorUtilities.GetRandom();
+       
     }
-} *@
+}
