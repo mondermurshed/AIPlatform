@@ -1,37 +1,41 @@
 ﻿@using DTOs
 @implements IDialogContentComponent<SettingsDTO>
+@implements IDisposable
+@inject SettingsService SettingsService
 <FluentDesignTheme @bind-Mode="@Mode"
-                   @bind-OfficeColor="@OfficeColor"
-                   StorageName="theme" />
+                   @bind-OfficeColor="@OfficeColor" ModeChanged="ThemeModeChanged" OfficeColorChanged="ThemeColorChanged"
+                   />
+
+
+<FluentDialogHeader >
+    <FluentStack VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center">
+        <FluentIcon Value="@(new Icons.Regular.Size32.Settings())" />
+        <FluentLabel >
+       Quick Settings
+        </FluentLabel>
+    </FluentStack>
+</FluentDialogHeader>
+
+
 <FluentDialogBody>
 
-
-
-
-
     <FluentCard Height="180px" AreaRestricted="false" >
+        <FluentSelect style="margin-bottom:10px;" Label="Theme"
+                      Width="250px"
+                      Items="@(Enum.GetValues<DesignThemeModes>())"
+                      @bind-SelectedOption="@Mode" />
 
+        <FluentSelect style="margin-bottom:15px;" Label="Color"
+                      Items="@(Enum.GetValues<OfficeColor>().Select(i => (OfficeColor?)i))"
+                      Height="200px"
+                      Width="250px"
+                      @bind-SelectedOption="@OfficeColor"/>
 
-    <FluentSelect style="margin-bottom:10px;" Label="Theme"
-                  Width="250px"
-                  Items="@(Enum.GetValues<DesignThemeModes>())"
-                  @bind-SelectedOption="@Mode" />
-
-
-    <FluentSelect style="margin-bottom:15px;" Label="Color"
-                  Items="@(Enum.GetValues<OfficeColor>().Select(i => (OfficeColor?)i))"
-                  Height="200px"
-                  Width="250px"
-                  @bind-SelectedOption="@OfficeColor"/>
-
-
-    <FluentButton style="margin-left:5px;" Appearance="Appearance.Accent" OnClick="PickRandomColor">Feeling lucky?</FluentButton>
-
+        <FluentButton style="margin-left:5px;" Appearance="Appearance.Accent" OnClick="PickRandomColor">Feeling lucky?</FluentButton>
     </FluentCard>
 
-
-    <FluentCard Height="180px" AreaRestricted="false" Style="margin-top: 20px;">
-        <ModelPathPicker />
+    <FluentCard Height="180px" AreaRestricted="true" Style="margin-top: 20px;" >
+        <ModelPathPicker /> 
     </FluentCard>
 
 </FluentDialogBody>
@@ -43,10 +47,51 @@
     public DesignThemeModes Mode { get; set; }
     public OfficeColor? OfficeColor { get; set; }
 
+    // CancellationTokenSource used to debounce repeated clicks.
+    // Each click cancels the previous pending task and schedules a new one
+    // that will run 1 second after the last click.
+    private CancellationTokenSource? _debounceCts;
 
-    void PickRandomColor()
+    // Debounced click handler: waits 1s after the last invocation, then runs.
+    private async Task PickRandomColor()
     {
-        OfficeColor = OfficeColorUtilities.GetRandom();
-       
+        // Cancel any pending scheduled execution
+        _debounceCts?.Cancel();
+        _debounceCts?.Dispose();
+
+        _debounceCts = new CancellationTokenSource();
+        var token = _debounceCts.Token;
+
+        try
+        {
+            // Wait for 1 second; if another click happens, this will be cancelled
+            await Task.Delay(200, token);
+
+            // If not cancelled, perform the action
+            OfficeColor = OfficeColorUtilities.GetRandom();
+
+            // Notify UI to re-render (usually unnecessary when binding, but safe)
+            StateHasChanged();
+            SettingsService.SetThemeColor(OfficeColor.ToString());
+        }
+        catch (OperationCanceledException)
+        {
+            // Ignore cancellations - expected when user clicks again within 1s
+        }
+    }
+
+    public void Dispose()
+    {
+        _debounceCts?.Cancel();
+        _debounceCts?.Dispose();
+        _debounceCts = null;
+    }
+    private void ThemeModeChanged()
+    {
+        SettingsService.SetThemeMode(Mode.ToString());
+    }
+    private void ThemeColorChanged()
+    {
+        SettingsService.SetThemeColor(OfficeColor.ToString());
     }
 }

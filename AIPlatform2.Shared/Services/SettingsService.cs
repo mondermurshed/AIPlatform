@@ -8,6 +8,8 @@ namespace AIPlatform2.Shared.Services
     public class AppSettings
     {
         public string ModelRootPath { get; set; } = "";
+        public string ThemeMode { get; set; } = "";
+        public string ThemeColor { get; set; } = "";
     }
 
     public class SettingsService
@@ -90,6 +92,34 @@ namespace AIPlatform2.Shared.Services
 
             error = null;
             return true;
+        }
+
+
+        public string GetThemeMode()
+        {
+            lock (_lock)
+                return _settings.ThemeMode ?? "";
+        }
+        public string GetThemeColor()
+        {
+            lock (_lock)
+                return _settings.ThemeColor ?? "";
+        }
+        public void SetThemeMode(string mode)
+        {
+            lock (_lock)
+            {
+                _settings.ThemeMode = mode;
+                SaveSettings();
+            }
+        }
+        public void SetThemeColor(string color)
+        {
+            lock (_lock)
+            {
+                _settings.ModelRootPath = color;
+                SaveSettings();
+            }
         }
     }
 }

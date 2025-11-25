@@ -2,58 +2,43 @@
 @inject SettingsService SettingsService
 @inject IFolderPickerService FolderPickerService
 
-<div class="model-path-picker" style="display:flex; flex-direction:column; gap:8px; width:100%;">
-    <div style="display:flex; gap:8px; align-items:center;">
+<FluentStack Orientation="Orientation.Vertical" VerticalGap="10">
+
+
         <FluentTextField Value="@_displayPath"
                          Placeholder="Select model folder..."
-                         ReadOnly="true"
-                         Style="flex:1; min-width:0;" />
+                     ReadOnly="true" Label="Your Main Model Folder" style="width: 100%;" />
+                     
 
-        <FluentButton @onclick="OnBrowseClicked">Browse</FluentButton>
-    </div>
 
-    <div style="display:flex; gap:8px; align-items:center;">
-        <div style="font-size:0.9rem; color:#666;">
-            Current saved path:
-        </div>
-        <div style="font-size:0.9rem; color:#333; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:60%;">
-            @(_savedPathDisplay ?? "(not set)")
-        </div>
-    </div>
 
-    @if (!string.IsNullOrEmpty(_validationError))
-    {
-        <div style="color:#b00020; margin-top:6px;">@_validationError</div>
-    }
-    else if (_showSuccess)
-    {
-        <div style="color:green; margin-top:6px;">Path selected and saved.</div>
-    }
-</div>
+            
+    <FluentLabel Style="margin-bottom: 0px">@_validationError</FluentLabel>
+    <FluentButton Appearance="Appearance.Accent" @onclick="OnBrowseClicked">Browse</FluentButton>
+
+</FluentStack>
 
 @code {
-    private string _displayPath = "";
-    private string? _savedPathDisplay;
+    private string? _displayPath = null;
     private string? _validationError;
-    private bool _showSuccess;
+  
 
     protected override void OnInitialized()
     {
         // Load saved path
-        _savedPathDisplay = SettingsService.GetModelRootPath();
-        _displayPath = _savedPathDisplay ?? "";
+        _displayPath = SettingsService.GetModelRootPath();
+       
     }
 
     private async Task OnBrowseClicked()
     {
         _validationError = null;
-        _showSuccess = false;
-
+       
         try
         {
             if (FolderPickerService is null)
             {
-                _validationError = "FolderPickerService not available for this platform.";
+                _validationError = "The Tools To Open The Folder Picker Dialog Is Not Available For This Platform.";
                 StateHasChanged();
                 return;
             }
@@ -63,29 +48,27 @@
 
             if (string.IsNullOrWhiteSpace(picked))
             {
-                _validationError = "No folder selected.";
+                _validationError = "Nothing Was Changed.";
                 StateHasChanged();
                 return;
             }
 
             if (!Directory.Exists(picked))
             {
-                _validationError = "Picked folder does not exist.";
+                _validationError = "Picked Folder Does Not Exist.";
                 StateHasChanged();
                 return;
             }
 
             // show and auto-save — remove the next line if you prefer display-only
             SettingsService.SetModelRootPath(picked);
-
-            _displayPath = picked;
-            _savedPathDisplay = SettingsService.GetModelRootPath();
-            _showSuccess = true;
+            _displayPath = SettingsService.GetModelRootPath();
+            _validationError = "The New Path Was Successfully Saved."; 
             StateHasChanged();
         }
         catch (Exception ex)
         {
-            _validationError = $"Error opening folder picker: {ex.GetType().Name}: {ex.Message}";
+            _validationError = $"Error Opening Folder Picker: {ex.GetType().Name}: {ex.Message}";
             StateHasChanged();
         }
     }
