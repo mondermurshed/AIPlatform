@@ -6,8 +6,10 @@
 <FluentDialogBody>
 
 
-  
 
+
+
+    <FluentCard Height="180px" AreaRestricted="false" >
 
 
     <FluentSelect style="margin-bottom:10px;" Label="Theme"
@@ -23,9 +25,14 @@
                   @bind-SelectedOption="@OfficeColor"/>
 
 
-    <FluentButton style="margin-bottom:15px;" Appearance="Appearance.Accent" OnClick="PickRandomColor">Feeling lucky?</FluentButton>
- 
+    <FluentButton style="margin-left:5px;" Appearance="Appearance.Accent" OnClick="PickRandomColor">Feeling lucky?</FluentButton>
 
+    </FluentCard>
+
+
+    <FluentCard Height="180px" AreaRestricted="false" Style="margin-top: 20px;">
+        <ModelPathPicker />
+    </FluentCard>
 
 </FluentDialogBody>
 

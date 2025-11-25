@@ -2,7 +2,6 @@
 using System;
 using System.IO;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace AIPlatform2.Shared.Services
 {
@@ -16,10 +15,10 @@ namespace AIPlatform2.Shared.Services
         private readonly string _settingsFolder;
         private readonly string _settingsFile;
         private AppSettings _settings;
+        private readonly object _lock = new object(); // <-- important
 
         public SettingsService(string appName = "AIPlatform")
         {
-            // Use ApplicationData for cross-platform user-specific storage.
             var appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             _settingsFolder = Path.Combine(appData, appName);
             _settingsFile = Path.Combine(_settingsFolder, "settings.json");
@@ -32,46 +31,65 @@ namespace AIPlatform2.Shared.Services
 
         private AppSettings LoadSettings()
         {
-            try
+            lock (_lock)
             {
-                if (File.Exists(_settingsFile))
+                try
                 {
-                    var json = File.ReadAllText(_settingsFile);
-                    return JsonSerializer.Deserialize<AppSettings>(json) ?? new AppSettings();
+                    if (File.Exists(_settingsFile))
+                    {
+                        var json = File.ReadAllText(_settingsFile);
+                        return JsonSerializer.Deserialize<AppSettings>(json) ?? new AppSettings();
+                    }
                 }
+                catch { }
+
+                return new AppSettings();
             }
-            catch
-            {
-                // ignore parse errors and return defaults
-            }
-            return new AppSettings();
         }
 
         private void SaveSettings()
         {
-            var json = JsonSerializer.Serialize(_settings, new JsonSerializerOptions { WriteIndented = true });
-            File.WriteAllText(_settingsFile, json);
+            lock (_lock)
+            {
+                var json = JsonSerializer.Serialize(_settings, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText(_settingsFile, json);
+            }
         }
 
-        // Public API ----------------------------------------------------------------
-        public string GetModelRootPath() => _settings.ModelRootPath ?? "";
+        // Public API -------------------------
+        public string GetModelRootPath()
+        {
+            lock (_lock)
+                return _settings.ModelRootPath ?? "";
+        }
 
         public void SetModelRootPath(string path)
         {
-            _settings.ModelRootPath = path?.Trim() ?? "";
-            SaveSettings();
+            lock (_lock)
+            {
+                _settings.ModelRootPath = path?.Trim() ?? "";
+                SaveSettings();
+            }
         }
 
         public bool ValidateModelRootPath(out string error)
         {
-            var p = GetModelRootPath();
-            if (string.IsNullOrWhiteSpace(p)) { error = "Model folder not set."; return false; }
-            if (!Directory.Exists(p)) { error = "Folder does not exist."; return false; }
-            //// optional: check for a couple of required files
-            //var hasTextEncoder = File.Exists(Path.Combine(p, "text_encoder", "model.onnx"));
-            //var hasUnet = Directory.Exists(Path.Combine(p, "unet")) && Directory.GetFiles(Path.Combine(p, "unet"), "*.onnx").Length > 0;
-            //if (!hasTextEncoder || !hasUnet) { error = "Model folder missing required files (text_encoder/unet)."; return false; }
-            error = null; return true;
+            var path = GetModelRootPath();
+
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                error = "Model folder not set.";
+                return false;
+            }
+
+            if (!Directory.Exists(path))
+            {
+                error = "Folder does not exist.";
+                return false;
+            }
+
+            error = null;
+            return true;
         }
     }
 }

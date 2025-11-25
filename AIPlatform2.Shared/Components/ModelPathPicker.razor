@@ -1,0 +1,92 @@
+﻿@using AIPlatform2.Shared.Services
+@inject SettingsService SettingsService
+@inject IFolderPickerService FolderPickerService
+
+<div class="model-path-picker" style="display:flex; flex-direction:column; gap:8px; width:100%;">
+    <div style="display:flex; gap:8px; align-items:center;">
+        <FluentTextField Value="@_displayPath"
+                         Placeholder="Select model folder..."
+                         ReadOnly="true"
+                         Style="flex:1; min-width:0;" />
+
+        <FluentButton @onclick="OnBrowseClicked">Browse</FluentButton>
+    </div>
+
+    <div style="display:flex; gap:8px; align-items:center;">
+        <div style="font-size:0.9rem; color:#666;">
+            Current saved path:
+        </div>
+        <div style="font-size:0.9rem; color:#333; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:60%;">
+            @(_savedPathDisplay ?? "(not set)")
+        </div>
+    </div>
+
+    @if (!string.IsNullOrEmpty(_validationError))
+    {
+        <div style="color:#b00020; margin-top:6px;">@_validationError</div>
+    }
+    else if (_showSuccess)
+    {
+        <div style="color:green; margin-top:6px;">Path selected and saved.</div>
+    }
+</div>
+
+@code {
+    private string _displayPath = "";
+    private string? _savedPathDisplay;
+    private string? _validationError;
+    private bool _showSuccess;
+
+    protected override void OnInitialized()
+    {
+        // Load saved path
+        _savedPathDisplay = SettingsService.GetModelRootPath();
+        _displayPath = _savedPathDisplay ?? "";
+    }
+
+    private async Task OnBrowseClicked()
+    {
+        _validationError = null;
+        _showSuccess = false;
+
+        try
+        {
+            if (FolderPickerService is null)
+            {
+                _validationError = "FolderPickerService not available for this platform.";
+                StateHasChanged();
+                return;
+            }
+
+            // Ask platform to pick a folder
+            var picked = await FolderPickerService.PickFolderAsync();
+
+            if (string.IsNullOrWhiteSpace(picked))
+            {
+                _validationError = "No folder selected.";
+                StateHasChanged();
+                return;
+            }
+
+            if (!Directory.Exists(picked))
+            {
+                _validationError = "Picked folder does not exist.";
+                StateHasChanged();
+                return;
+            }
+
+            // show and auto-save — remove the next line if you prefer display-only
+            SettingsService.SetModelRootPath(picked);
+
+            _displayPath = picked;
+            _savedPathDisplay = SettingsService.GetModelRootPath();
+            _showSuccess = true;
+            StateHasChanged();
+        }
+        catch (Exception ex)
+        {
+            _validationError = $"Error opening folder picker: {ex.GetType().Name}: {ex.Message}";
+            StateHasChanged();
+        }
+    }
+}
