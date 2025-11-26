@@ -21,7 +21,9 @@
 @code {
     private string? _displayPath = null;
     private string? _validationError;
-  
+
+    private static readonly System.Text.RegularExpressions.Regex _allowedAsciiPathRegex =
+        new(@"^[A-Za-z0-9\s_\-:\\/\.]+$", System.Text.RegularExpressions.RegexOptions.Compiled);
 
     protected override void OnInitialized()
     {
@@ -33,7 +35,7 @@
     private async Task OnBrowseClicked()
     {
         _validationError = null;
-       
+
         try
         {
             if (FolderPickerService is null)
@@ -43,7 +45,6 @@
                 return;
             }
 
-            // Ask platform to pick a folder
             var picked = await FolderPickerService.PickFolderAsync();
 
             if (string.IsNullOrWhiteSpace(picked))
@@ -60,10 +61,18 @@
                 return;
             }
 
-            // show and auto-save — remove the next line if you prefer display-only
+            // NEW: validate that the path contains only allowed English/ASCII characters
+            if (!IsPathAllowedEnglish(picked))
+            {
+                _validationError = "Selected folder path contains non-English characters. Please choose a path that uses only English letters/numbers and standard punctuation.";
+                StateHasChanged();
+                return;
+            }
+
+            // show and auto-save — unchanged
             SettingsService.SetModelRootPath(picked);
             _displayPath = SettingsService.GetModelRootPath();
-            _validationError = "The New Path Was Successfully Saved."; 
+            _validationError = "The New Path Was Successfully Saved.";
             StateHasChanged();
         }
         catch (Exception ex)
@@ -72,4 +81,21 @@
             StateHasChanged();
         }
     }
+
+    private bool IsPathAllowedEnglish(string path)
+    {
+        if (string.IsNullOrWhiteSpace(path))
+            return false;
+
+        // Check for ASCII only (rejects Arabic, Chinese, emojis, etc.)
+        foreach (var ch in path)
+        {
+            if (ch > 127) return false;
+        }
+
+        // Check allowed characters only
+        return _allowedAsciiPathRegex.IsMatch(path);
+    }
+
+
 }
