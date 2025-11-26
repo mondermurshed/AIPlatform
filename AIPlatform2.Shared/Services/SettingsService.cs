@@ -1,6 +1,8 @@
 ﻿// AIPlatform.Shared/Services/SettingsService.cs
+using Microsoft.FluentUI.AspNetCore.Components;
 using System;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Text.Json;
 
 namespace AIPlatform2.Shared.Services
@@ -8,8 +10,8 @@ namespace AIPlatform2.Shared.Services
     public class AppSettings
     {
         public string ModelRootPath { get; set; } = "";
-        public string ThemeMode { get; set; } = "";
-        public string ThemeColor { get; set; } = "";
+        public DesignThemeModes ThemeMode { get; set; } 
+        public OfficeColor ThemeColor { get; set; } 
     }
 
     public class SettingsService
@@ -95,17 +97,18 @@ namespace AIPlatform2.Shared.Services
         }
 
 
-        public string GetThemeMode()
+        public DesignThemeModes GetThemeMode()
         {
             lock (_lock)
-                return _settings.ThemeMode ?? "";
+                return _settings.ThemeMode;
         }
-        public string GetThemeColor()
+        public OfficeColor GetThemeColor()
         {
             lock (_lock)
-                return _settings.ThemeColor ?? "";
+                return _settings.ThemeColor;
         }
-        public void SetThemeMode(string mode)
+        
+        public void SetThemeMode(DesignThemeModes mode)
         {
             lock (_lock)
             {
@@ -113,11 +116,11 @@ namespace AIPlatform2.Shared.Services
                 SaveSettings();
             }
         }
-        public void SetThemeColor(string color)
+        public void SetThemeColor(OfficeColor color)
         {
             lock (_lock)
             {
-                _settings.ModelRootPath = color;
+                _settings.ThemeColor = color;
                 SaveSettings();
             }
         }

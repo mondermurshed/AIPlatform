@@ -2,60 +2,84 @@
 @implements IDialogContentComponent<SettingsDTO>
 @implements IDisposable
 @inject SettingsService SettingsService
-<FluentDesignTheme @bind-Mode="@Mode"
-                   @bind-OfficeColor="@OfficeColor" ModeChanged="ThemeModeChanged" OfficeColorChanged="ThemeColorChanged"
-                   />
 
+<FluentDesignTheme Mode="@Mode" OfficeColor="@OfficeColor" />
 
-<FluentDialogHeader >
+<FluentDialogHeader>
     <FluentStack VerticalAlignment="VerticalAlignment.Center" HorizontalAlignment="HorizontalAlignment.Center">
         <FluentIcon Value="@(new Icons.Regular.Size32.Settings())" />
-        <FluentLabel >
-       Quick Settings
-        </FluentLabel>
+        <FluentLabel>Quick Settings</FluentLabel>
     </FluentStack>
 </FluentDialogHeader>
 
-
 <FluentDialogBody>
-
-    <FluentCard Height="180px" AreaRestricted="false" >
+    <FluentCard Height="180px" AreaRestricted="false">
         <FluentSelect style="margin-bottom:10px;" Label="Theme"
                       Width="250px"
-                      Items="@(Enum.GetValues<DesignThemeModes>())"
-                      @bind-SelectedOption="@Mode" />
+                      Items="@(Enum.GetValues<DesignThemeModes>().Where(m => m != DesignThemeModes.System))"
+                      @bind-SelectedOption="Mode" />
 
         <FluentSelect style="margin-bottom:15px;" Label="Color"
-                      Items="@(Enum.GetValues<OfficeColor>().Select(i => (OfficeColor?)i))"
+                      Items="@(Enum.GetValues<OfficeColor>())"
                       Height="200px"
                       Width="250px"
-                      @bind-SelectedOption="@OfficeColor"/>
+                      @bind-SelectedOption="OfficeColor" />
 
         <FluentButton style="margin-left:5px;" Appearance="Appearance.Accent" OnClick="PickRandomColor">Feeling lucky?</FluentButton>
     </FluentCard>
 
-    <FluentCard Height="180px" AreaRestricted="true" Style="margin-top: 20px;" >
-        <ModelPathPicker /> 
+    <FluentCard Height="180px" AreaRestricted="true" Style="margin-top: 20px;">
+        <ModelPathPicker />
     </FluentCard>
-
 </FluentDialogBody>
 
 @code {
-    [Parameter]
-    public SettingsDTO Content { get; set; } = default!;
+    [Parameter] public SettingsDTO Content { get; set; } = default!;
 
-    public DesignThemeModes Mode { get; set; }
-    public OfficeColor? OfficeColor { get; set; }
+    // Backing fields
+    private DesignThemeModes _mode;
+    private OfficeColor _officeColor;
 
-    // CancellationTokenSource used to debounce repeated clicks.
-    // Each click cancels the previous pending task and schedules a new one
-    // that will run 1 second after the last click.
+    // Exposed properties bound to the FluentDesignTheme.
+    // Setters call SettingsService (no changes to SettingsService required).
+    public DesignThemeModes Mode
+    {
+        get => _mode;
+        set
+        {
+            if (_mode == value) return;
+            _mode = value;
+            // Persist change using existing SettingsService API
+            SettingsService.SetThemeMode(_mode);
+            StateHasChanged();
+        }
+    }
+
+    public OfficeColor OfficeColor
+    {
+        get => _officeColor;
+        set
+        {
+            if (_officeColor == value) return;
+            _officeColor = value;
+            // Persist change using existing SettingsService API
+            SettingsService.SetThemeColor(_officeColor);
+            StateHasChanged();
+        }
+    }
+
+    // Debounce token for the random color button
     private CancellationTokenSource? _debounceCts;
 
-    // Debounced click handler: waits 1s after the last invocation, then runs.
+    protected override void OnInitialized()
+    {
+        // Initialize from SettingsService (use its getters; no changes to SettingsService)
+        _mode = SettingsService.GetThemeMode();
+        _officeColor = SettingsService.GetThemeColor();
+    }
+
     private async Task PickRandomColor()
     {
-        // Cancel any pending scheduled execution
         _debounceCts?.Cancel();
         _debounceCts?.Dispose();
 
@@ -64,20 +88,13 @@
 
         try
         {
-            // Wait for 1 second; if another click happens, this will be cancelled
+            // small debounce
             await Task.Delay(200, token);
 
-            // If not cancelled, perform the action
-            OfficeColor = OfficeColorUtilities.GetRandom();
-
-            // Notify UI to re-render (usually unnecessary when binding, but safe)
-            StateHasChanged();
-            SettingsService.SetThemeColor(OfficeColor.ToString());
+            var random = OfficeColorUtilities.GetRandom();
+            OfficeColor = random; // setter will call SettingsService.SetThemeColor(random)
         }
-        catch (OperationCanceledException)
-        {
-            // Ignore cancellations - expected when user clicks again within 1s
-        }
+        catch (OperationCanceledException) { /* expected on rapid clicks */ }
     }
 
     public void Dispose()
@@ -85,13 +102,5 @@
         _debounceCts?.Cancel();
         _debounceCts?.Dispose();
         _debounceCts = null;
-    }
-    private void ThemeModeChanged()
-    {
-        SettingsService.SetThemeMode(Mode.ToString());
-    }
-    private void ThemeColorChanged()
-    {
-        SettingsService.SetThemeColor(OfficeColor.ToString());
     }
 }
