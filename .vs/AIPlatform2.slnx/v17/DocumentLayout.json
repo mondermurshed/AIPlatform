@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\USER4\\source\\repos\\AIPlatform\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|c:\\users\\user4\\source\\repos\\aiplatform\\aiplatform2.shared\\components\\settingcomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|solutionrelative:aiplatform2.shared\\components\\settingcomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|c:\\users\\user4\\source\\repos\\aiplatform\\aiplatform2.shared\\services\\modelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|solutionrelative:aiplatform2.shared\\services\\modelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|c:\\users\\user4\\source\\repos\\aiplatform\\aiplatform2.shared\\services\\settingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|solutionrelative:aiplatform2.shared\\services\\settingsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|c:\\users\\user4\\source\\repos\\aiplatform\\aiplatform2.shared\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|solutionrelative:aiplatform2.shared\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|c:\\users\\user4\\source\\repos\\aiplatform\\aiplatform2.shared\\components\\settingcomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|solutionrelative:aiplatform2.shared\\components\\settingcomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|c:\\users\\user4\\source\\repos\\aiplatform\\aiplatform2.shared\\services\\inferenceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -68,11 +76,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
+              "Title": "ModelManager.cs",
+              "DocumentMoniker": "C:\\Users\\USER4\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Services\\ModelManager.cs",
+              "RelativeDocumentMoniker": "AIPlatform2.Shared\\Services\\ModelManager.cs",
+              "ToolTip": "C:\\Users\\USER4\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Services\\ModelManager.cs",
+              "RelativeToolTip": "AIPlatform2.Shared\\Services\\ModelManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-04T08:48:46.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "C:\\Users\\USER4\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "AIPlatform2.Shared\\Layout\\NavMenu.razor",
+              "ToolTip": "C:\\Users\\USER4\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "AIPlatform2.Shared\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-04T06:34:18.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "BundledVersions.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\packs\\Microsoft.Maui.Sdk\\9.0.111\\Sdk\\BundledVersions.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\packs\\Microsoft.Maui.Sdk\\9.0.111\\Sdk\\BundledVersions.targets",
@@ -84,7 +118,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "AIPlatform2.csproj",
               "DocumentMoniker": "C:\\Users\\USER4\\source\\repos\\AIPlatform\\AIPlatform2\\AIPlatform2.csproj",
               "RelativeDocumentMoniker": "AIPlatform2\\AIPlatform2.csproj",
@@ -96,7 +130,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "AppDelegate.cs",
               "DocumentMoniker": "C:\\Users\\USER4\\source\\repos\\AIPlatform\\AIPlatform2\\Platforms\\MacCatalyst\\AppDelegate.cs",
               "RelativeDocumentMoniker": "AIPlatform2\\Platforms\\MacCatalyst\\AppDelegate.cs",
@@ -108,7 +142,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "ModelPathPicker.razor",
               "DocumentMoniker": "C:\\Users\\USER4\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Components\\ModelPathPicker.razor",
               "RelativeDocumentMoniker": "AIPlatform2.Shared\\Components\\ModelPathPicker.razor",
@@ -120,7 +154,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "NullFolderPickerService.cs",
               "DocumentMoniker": "C:\\Users\\USER4\\source\\repos\\AIPlatform\\AIPlatform2\\Services\\NullFolderPickerService.cs",
               "RelativeDocumentMoniker": "AIPlatform2\\Services\\NullFolderPickerService.cs",
@@ -132,7 +166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\USER4\\source\\repos\\AIPlatform\\AIPlatform2\\MainPage.xaml",
               "RelativeDocumentMoniker": "AIPlatform2\\MainPage.xaml",
@@ -144,7 +178,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "MauiProgram.cs",
               "DocumentMoniker": "C:\\Users\\USER4\\source\\repos\\AIPlatform\\AIPlatform2\\MauiProgram.cs",
               "RelativeDocumentMoniker": "AIPlatform2\\MauiProgram.cs",
@@ -156,7 +190,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "FolderPickerService.cs",
               "DocumentMoniker": "C:\\Users\\USER4\\source\\repos\\AIPlatform\\AIPlatform2\\Platforms\\MacCatalyst\\FolderPickerService.cs",
               "RelativeDocumentMoniker": "AIPlatform2\\Platforms\\MacCatalyst\\FolderPickerService.cs",
@@ -168,7 +202,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "FolderPickerService.cs",
               "DocumentMoniker": "C:\\Users\\USER4\\source\\repos\\AIPlatform\\AIPlatform2\\Platforms\\Windows\\FolderPickerService.cs",
               "RelativeDocumentMoniker": "AIPlatform2\\Platforms\\Windows\\FolderPickerService.cs",
@@ -180,7 +214,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "IFolderPickerService.cs",
               "DocumentMoniker": "C:\\Users\\USER4\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Services\\Interface\\IFolderPickerService.cs",
               "RelativeDocumentMoniker": "AIPlatform2.Shared\\Services\\Interface\\IFolderPickerService.cs",
@@ -188,12 +222,11 @@
               "RelativeToolTip": "AIPlatform2.Shared\\Services\\Interface\\IFolderPickerService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T08:46:33.919Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-25T08:46:33.919Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "InferenceService.cs",
               "DocumentMoniker": "C:\\Users\\USER4\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Services\\InferenceService.cs",
               "RelativeDocumentMoniker": "AIPlatform2.Shared\\Services\\InferenceService.cs",
@@ -201,8 +234,7 @@
               "RelativeToolTip": "AIPlatform2.Shared\\Services\\InferenceService.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T07:11:51.606Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-25T07:11:51.606Z"
             },
             {
               "$type": "Document",
@@ -212,27 +244,27 @@
               "RelativeDocumentMoniker": "AIPlatform2.Shared\\Services\\SettingsService.cs",
               "ToolTip": "C:\\Users\\USER4\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Services\\SettingsService.cs",
               "RelativeToolTip": "AIPlatform2.Shared\\Services\\SettingsService.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAmwIAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGAAAAAAAAAAAAAowIAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-25T07:10:12.209Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "SettingComponent.razor",
               "DocumentMoniker": "C:\\Users\\USER4\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Components\\SettingComponent.razor",
               "RelativeDocumentMoniker": "AIPlatform2.Shared\\Components\\SettingComponent.razor",
               "ToolTip": "C:\\Users\\USER4\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Components\\SettingComponent.razor",
               "RelativeToolTip": "AIPlatform2.Shared\\Components\\SettingComponent.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA4AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-11-25T07:08:12.726Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "MainLayout.razor",
               "DocumentMoniker": "C:\\Users\\USER4\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Layout\\MainLayout.razor",
               "RelativeDocumentMoniker": "AIPlatform2.Shared\\Layout\\MainLayout.razor",
@@ -244,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Microsoft.NET.ConflictResolution.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\10.0.100\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.ConflictResolution.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\10.0.100\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.ConflictResolution.targets",
