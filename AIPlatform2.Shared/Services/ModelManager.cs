@@ -21,7 +21,7 @@ namespace AIPlatform2.Shared.Services
         private readonly HttpClient _http;
         private bool _disposed;
 
-        public ModelManager(SettingsService settings, HttpClient? httpClient = null)
+        public ModelManager(SettingsService settings, HttpClient httpClient)
         {
             _settings = settings ?? throw new ArgumentNullException(nameof(settings));
             _http = httpClient ?? new HttpClient();

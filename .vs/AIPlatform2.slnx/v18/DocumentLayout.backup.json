@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\monde\\source\\repos\\AIPlatform\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|c:\\users\\monde\\source\\repos\\aiplatform\\aiplatform2.shared\\services\\modelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|solutionrelative:aiplatform2.shared\\services\\modelmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32DAE409-558D-CC05-A4F5-06C6E5B75F74}|AIPlatform2\\AIPlatform2.csproj|c:\\users\\monde\\source\\repos\\aiplatform\\aiplatform2\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32DAE409-558D-CC05-A4F5-06C6E5B75F74}|AIPlatform2\\AIPlatform2.csproj|solutionrelative:aiplatform2\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|c:\\users\\monde\\source\\repos\\aiplatform\\aiplatform2.shared\\services\\stablediffusionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1C1E13EB-0E11-F893-2588-10488C460634}|AIPlatform2.Shared\\AIPlatform2.Shared.csproj|solutionrelative:aiplatform2.shared\\services\\stablediffusionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -31,6 +39,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "AIPlatform2\\MauiProgram.cs",
+              "ToolTip": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2\\MauiProgram.cs",
+              "RelativeToolTip": "AIPlatform2\\MauiProgram.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwCEAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T14:33:07.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ModelManager.cs",
+              "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Services\\ModelManager.cs",
+              "RelativeDocumentMoniker": "AIPlatform2.Shared\\Services\\ModelManager.cs",
+              "ToolTip": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Services\\ModelManager.cs",
+              "RelativeToolTip": "AIPlatform2.Shared\\Services\\ModelManager.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAgwDcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-05T14:25:46.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "_Imports.razor",
               "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\_Imports.razor",
               "RelativeDocumentMoniker": "AIPlatform2.Shared\\_Imports.razor",
@@ -38,17 +72,16 @@
               "RelativeToolTip": "AIPlatform2.Shared\\_Imports.razor",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-03T18:45:50.435Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-03T18:45:50.435Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "StableDiffusionService.cs",
               "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Services\\StableDiffusionService.cs",
               "RelativeDocumentMoniker": "AIPlatform2.Shared\\Services\\StableDiffusionService.cs",
-              "ToolTip": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Services\\StableDiffusionService.cs*",
-              "RelativeToolTip": "AIPlatform2.Shared\\Services\\StableDiffusionService.cs*",
+              "ToolTip": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Services\\StableDiffusionService.cs",
+              "RelativeToolTip": "AIPlatform2.Shared\\Services\\StableDiffusionService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAYwAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-03T18:45:16.593Z",
@@ -56,7 +89,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "SettingsService.cs",
               "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\Services\\SettingsService.cs",
               "RelativeDocumentMoniker": "AIPlatform2.Shared\\Services\\SettingsService.cs",
@@ -64,21 +97,19 @@
               "RelativeToolTip": "AIPlatform2.Shared\\Services\\SettingsService.cs",
               "ViewState": "AgIAAGMAAAAAAAAAAAAzwIAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-03T18:42:18.025Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-03T18:42:18.025Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AIPlatform2.Shared",
+              "DocumentIndex": 4,
+              "Title": "AIPlatform2.Shared.csproj",
               "DocumentMoniker": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\AIPlatform2.Shared.csproj",
               "RelativeDocumentMoniker": "AIPlatform2.Shared\\AIPlatform2.Shared.csproj",
               "ToolTip": "C:\\Users\\monde\\source\\repos\\AIPlatform\\AIPlatform2.Shared\\AIPlatform2.Shared.csproj",
               "RelativeToolTip": "AIPlatform2.Shared\\AIPlatform2.Shared.csproj",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-03T17:53:37.125Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-03T17:53:37.125Z"
             }
           ]
         }

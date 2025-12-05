@@ -23,10 +23,11 @@ namespace AIPlatform2
 
             builder.Services.AddMauiBlazorWebView();
             builder.Services.AddFluentUIComponents();
-
+            
             // App services (singletons)
             builder.Services.AddSingleton<InferenceService>();
             builder.Services.AddSingleton<SettingsService>();
+            builder.Services.AddSingleton<HttpClient>();
             builder.Services.AddSingleton<IFormFactor, FormFactor>();
 
             // Platform folder picker registration
